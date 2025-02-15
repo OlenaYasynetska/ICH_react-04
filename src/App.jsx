@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
-import CityCard from './components/CityCard/CityCard';
+import React, { useState } from 'react';
+import CityCard from "./components/CityCard/CityCard";
 import CitySelector from './components/CitySelector/CitySelector';
+import MathQuiz from "./components/MathQuiz/MathQuiz";
 import './App.css';
 
 const citiesData = [
@@ -33,6 +34,8 @@ function App() {
       <h1>City Cards</h1>
       <CitySelector cities={citiesData} onSelectCity={setSelectedCity} />
       {selectedCity && <CityCard city={selectedCity} />}
+      <h1>Math Quiz</h1>
+      <MathQuiz />
     </div>
   );
 }
