@@ -1,8 +1,10 @@
 .city-selector {
     margin-bottom: 20px;
+    
   }
   
   .city-selector select {
     padding: 5px;
     font-size: 16px;
+    
   }

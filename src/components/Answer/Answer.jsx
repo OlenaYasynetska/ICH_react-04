@@ -1,26 +1,30 @@
-import React, { useState } from "react";
-import "./Answer";
+import { useState, useEffect } from "react";
+import styles from "./Answer.module.css";
 
-function Answer({ updatePoints }) {
-  const [answer, setAnswer] = useState("");
+const Answer = ({ updatePoints, error }) => {
+  const [input, setInput] = useState("");
 
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    updatePoints(answer);
-    setAnswer("");
-  }
+    updatePoints(input);
+    setInput("");
+  };
 
   return (
-    <form onSubmit={handleSubmit} className="answer-form">
+    <form onSubmit={handleSubmit} className={styles.answerForm}>
       <input
         type="number"
-        value={answer}
-        onChange={(e) => setAnswer(e.target.value)}
+        step="1"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        required
         placeholder="Введите ответ"
       />
-      <button type="submit">Ответить</button>
+      <button type="submit">Проверить</button>
+      {error && <p className={styles.errorMessage}>{error}</p>}
     </form>
   );
-}
+};
 
 export default Answer;
+
