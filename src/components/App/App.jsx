@@ -3,7 +3,6 @@ import CityCard from "../CityCard/CityCard.jsx";
 import CitySelector from "../CitySelector/CitySelector.jsx";
 import MathQuiz from "../MathQuiz/MathQuiz.jsx";
 import { citiesData } from "../../db/db";
-
 import './App.css';
 
 function App() {
